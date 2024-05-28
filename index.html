@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carwale.com</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/bd90c74062.js" crossorigin="anonymous"></script>
+
+<!-- <script src="first.js"></script> -->
+
+
+</head>
+
+<body>
+  <!-- ------------header--------- -->
+
+  <div class="Header">
+    <ul>
+      <img id="logo" src="logo.svg" alt="" />
+
+      <li><a href="#"> NEW CARS</a></li>
+      <li><a href="#">USED CARS</a></li>
+      <li><a href="#">REVIEWS & NEWS</a></li>
+      <p>
+        <input class="input" type="text" name="test" placeholder="Search " />
+        <li>
+          <a class="right-tab" href="#"><i class="fa-solid fa-location-dot"></i></a>
+        </li>
+        <li>
+          <a class="right-tab" href="#">
+            <i class="fa-solid fa-language"></i></a>
+        </li>
+        <li>
+          <a class="right-tab" href="#">
+            <i class="fa-regular fa-user"></i>
+          </a>
+        </li>
+      </p>
+    </ul>
+  </div>
+  <!-- --------background-image------- -->
+  <div class="background-image">
+    <h1 class="center">FIND THE RIGHT CAR</h1>
+    <!-- -------------search----------- -->
+    <div class="search center-tab">
+      <select name="car-types" id="types">
+        <option value="New">New</option>
+        <option value="Used">Used</option>
+      </select>
+      <input class="input-car" type="text" name="test" placeholder="Type to select car name " />
+      <input class="submit" type="Submit" value="search" />
+    </div>
+
+    <!-- Featured-cars -->
+    <h2 class="featured">Featured cars</h2>
+    <div class="car-status">
+      <ul>
+        <li><a href="#">Trending</a> </li>
+        <li><a href="#">Pupular</a> </li>
+        <li><a href="#">Upcoming</a> </li>
+      </ul>
+    </div>
+
+<!-- javaScript -->
+<!-- 
+<script type="text/javaScript">
+  
+$('.slider').slick({
+  dots: true,
+  infinite: false,
+  speed: 300,
+  slidesToShow: 3,
+  slidesToScroll: 3,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+});
+				
+</script> -->
+
+<div class="gallary-wrap">
+  
+  <i class="fa-solid fa-angle-left" style="margin-left: 180px; position: absolute;"  id="backBtn"></i>
+
+  <div class="div-car">
+    <div class="car-collection ">
+      <img class="car-img" src="fronx-exterior-right-front-three-quarter-109.webp" alt="">
+      <h3>Maruti Fronx</h3>
+      <nav>
+        Rs. 7.51 Lakh <sub>onwards</sub> <a href="#">OFFERS</a><br>
+        Avg. Ex-Showroom price
+      </nav>
+    </div>
+    <div class="car-collection">
+      <img class="car-img" src="fronx-exterior-right-front-three-quarter-109.webp" alt="">
+      <h3>Maruti Fronx</h3>
+      <nav>
+        Rs. 7.51 Lakh <sub>onwards</sub> <a href="#">OFFERS</a><br>
+        Avg. Ex-Showroom price
+      </nav>
+    </div>
+    <div class="car-collection">
+      <img class="car-img" src="creta-exterior-right-front-three-quarter-4.webp" alt="">
+      <h3>Maruti Fronx</h3>
+      <nav>
+        Rs. 7.51 Lakh <sub>onwards</sub> <a href="#">OFFERS</a><br>
+        Avg. Ex-Showroom price
+      </nav>
+    </div>
+    <div class="car-collection">
+      <img class="car-img" src="scorpio-n-exterior-right-front-three-quarter-75.webp" alt="">
+      <h3>Maruti Fronx</h3>
+      <nav>
+        Rs. 7.51 Lakh <sub>onwards</sub> <a href="#">OFFERS</a><br>
+        Avg. Ex-Showroom price
+      </nav>
+    </div>
+    <div class="car-collection">
+      <img class="car-img" src="scorpio-n-exterior-right-front-three-quarter-75.webp" alt="">
+      <h3>Maruti Fronx</h3>
+      <nav>
+        Rs. 7.51 Lakh <sub>onwards</sub> <a href="#">OFFERS</a><br>
+        Avg. Ex-Showroom price
+      </nav>
+    </div>
+    <div class="car-collection">
+      <img class="car-img" src="scorpio-n-exterior-right-front-three-quarter-75.webp" alt="">
+      <h3>Maruti Fronx</h3>
+      <nav>
+        Rs. 7.51 Lakh <sub>onwards</sub> <a href="#">OFFERS</a><br>
+        Avg. Ex-Showroom price
+      </nav>
+    </div>
+    
+  </div>
+
+  <i class="fa-solid fa-angle-right" id="nextBtn"></i>
+
+</div>
+
+<script>
+let scrollContainer = document.querySelector(".div-car");
+let backBtn =  document.getElementById("backBtn")
+let nextBtn =  document.getElementById("nextBtn")
+
+scrollContainer.addEventListener("wheel", (evt) =>{
+    evt.preventDefault();
+    scrollContainer.scrollLeft += evt.deltaY;
+    scrollContainer.style.scrollBehavior = "auto"
+});
+
+nextBtn.addEventListener("click",  ()=>{
+   scrollContainer.style.scrollBehavior = "smooth";
+   scrollContainer.scrollLeft += 300;
+
+});
+
+backBtn.addEventListener("click" , ()=>{
+    scrollContainer.style.scrollBehavior = "smooth"
+    scrollContainer.scrollLeft -= 400;
+});
+
+</script>
+
+    <!-- <div class="div-car ">
+      <div class="car-collection ">
+        <img class="car-img" src="fronx-exterior-right-front-three-quarter-109.webp" alt="">
+        <h3>Maruti Fronx</h3>
+        <nav>
+          Rs. 7.51 Lakh <sub>onwards</sub> <a href="#">OFFERS</a><br>
+          Avg. Ex-Showroom price
+        </nav>
+      </div>
+      <div class="car-collection">
+        <img class="car-img" src="fronx-exterior-right-front-three-quarter-109.webp" alt="">
+        <h3>Maruti Fronx</h3>
+        <nav>
+          Rs. 7.51 Lakh <sub>onwards</sub> <a href="#">OFFERS</a><br>
+          Avg. Ex-Showroom price
+        </nav>
+      </div>
+      <div class="car-collection">
+        <img class="car-img" src="creta-exterior-right-front-three-quarter-4.webp" alt="">
+        <h3>Maruti Fronx</h3>
+        <nav>
+          Rs. 7.51 Lakh <sub>onwards</sub> <a href="#">OFFERS</a><br>
+          Avg. Ex-Showroom price
+        </nav>
+      </div>
+      <div class="car-collection">
+        <img class="car-img" src="scorpio-n-exterior-right-front-three-quarter-75.webp" alt="">
+        <h3>Maruti Fronx</h3>
+        <nav>
+          Rs. 7.51 Lakh <sub>onwards</sub> <a href="#">OFFERS</a><br>
+          Avg. Ex-Showroom price
+        </nav>
+      </div>
+      <div class="car-collection">
+        <img class="car-img" src="scorpio-n-exterior-right-front-three-quarter-75.webp" alt="">
+        <h3>Maruti Fronx</h3>
+        <nav>
+          Rs. 7.51 Lakh <sub>onwards</sub> <a href="#">OFFERS</a><br>
+          Avg. Ex-Showroom price
+        </nav>
+      </div>
+      <div class="car-collection">
+        <img class="car-img" src="scorpio-n-exterior-right-front-three-quarter-75.webp" alt="">
+        <h3>Maruti Fronx</h3>
+        <nav>
+          Rs. 7.51 Lakh <sub>onwards</sub> <a href="#">OFFERS</a><br>
+          Avg. Ex-Showroom price
+        </nav>
+      </div>
+      
+    </div> -->
+
+    <!-- ------------all-brands---------- -->
+    <h2 class="featured all-brands">All Brands</h2>
+
+    <div class="logo-list">
+      <div class="car-logs">
+        <a href="#"><img id="company-logos" src="maruti-suzuki1647009823420.jpg" alt="maruti-logo"></a>
+        <br>
+        Maruti
+      </div>
+      <div class="car-logs">
+        <a href="#"><img id="company-logos" src="tata.jpg" alt="maruti-logo"></a>
+        <br>
+        Tata
+      </div>
+      <div class="car-logs">
+        <a href="#"><img id="company-logos" src="porsche.jpg" alt="maruti-logo"></a>
+        <br>
+        Porsche
+      </div>
+      <div class="car-logs">
+        <a href="#"><img id="company-logos" src="mercedes-benz.jpg" alt="maruti-logo"></a>
+        <br>
+        Mercedes-benz
+      </div>
+      <div class="car-logs">
+        <a href="#"><img id="company-logos" src="kia.jpg" alt="maruti-logo"></a>
+        <br>
+        KIA
+      </div>
+      <div class="car-logs">
+        <a href="#"><img id="company-logos" src="skoda1681982956420.jpg" alt="maruti-logo"></a>
+        <br>
+        Skoda
+      </div>
+    </div>
+
+    <div class="logo-list">
+      <div class="car-logs">
+        <a href="#"><img id="company-logos" src="hyundai.jpg" alt="maruti-logo"></a>
+        <br>
+        Hyundai
+      </div>
+      <div class="car-logs">
+        <a href="#"><img id="company-logos" src="bmw.jpg" alt="maruti-logo"></a>
+        <br>
+        BMW
+      </div>
+      <div class="car-logs">
+        <a href="#"><img id="company-logos" src="audi.jpg" alt="maruti-logo"></a>
+        <br>
+        Audi
+      </div>
+      <div class="car-logs">
+        <a href="#"><img id="company-logos" src="land-rover1647236056893.jpg" alt="maruti-logo"></a>
+        <br>
+        Land Rover
+      </div>
+      <div class="car-logs">
+        <a href="#"><img id="company-logos" src="toyota.jpg" alt="maruti-logo"></a>
+        <br>
+        Toyata
+      </div>
+      <div class="car-logs">
+        <a href="#"><img id="company-logos" src="mahindra.jpg" alt="maruti-logo"></a>
+        <br>
+        Mahindra
+      </div>
+    </div>
+
+    <!-- ------------Find the cars of your choice--------------- -->
+
+    <h2 class="featured all-brands">Find the Cars of your choice</h2>
+    <div class="car-status">
+      <ul>
+        <li><a href="#">Trending</a> </li>
+        <li><a href="#">Pupular</a> </li>
+        <li><a href="#">Upcoming</a> </li>
+        <li><a href="#">Upcoming</a> </li>
+        <li><a href="#">Upcoming</a> </li>
+      </ul>
+    </div>
+    <div class="price">
+      <div>
+        <a href="#" class="cars-price">Under 5 Lakh</a>
+        <a href="#" class="cars-price">Under 6 Lakh</a>
+        <a href="#" class="cars-price">Under 7 Lakh</a>
+        <a href="#" class="cars-price">Under 8 Lakh</a>
+        <a href="#" class="cars-price">Under 9 Lakh</a>
+      </div>
+      <br><br>
+      <div>
+        <a href="#" class="cars-price">Under 5 Lakh</a>
+        <a href="#" class="cars-price">Under 6 Lakh</a>
+        <a href="#" class="cars-price">Under 7 Lakh</a>
+        <a href="#" class="cars-price">Under 8 Lakh</a>
+        <a href="#" class="cars-price">Under 9 Lakh</a>
+      </div>
+    </div>
+
+    <!-- ------------Top cars in India--------------- -->
+    <h2 class="topcars">Top Cars in India</h2>
+    <div class="top-cars">
+      <div class="tcars">
+        <a href="#"> <img src="top cars/hatchbacks.webp" alt=""></a>
+        <h3>Top SUVs in India</h3>
+        <p class="carNames">Mahindra scorpio N, Hyundai Creta</p>
+      </div>
+
+      <div class="tcars">
+        <a href="#"> <img src="top cars/sedan.webp" alt=""></a>
+        <h3>Top SUVs in India</h3>
+        <p class="carNames">Mahindra scorpio N, Hyundai Creta</p>
+      </div>
+
+      <div class="tcars">
+        <a href="#"> <img src="suv.webp" alt=""></a>
+        <h3>Top SUVs in India</h3>
+        <p class="carNames">Mahindra scorpio N, Hyundai Creta</p>
+      </div>
+    </div>
+
+    <!-- -----------blur-background--------- -->
+
+
+
+    <div class="blur">
+      <img class="blurimg" src="get-final-price-banner.jpg" alt="">
+      <!-- ------------input-box--------- -->
+      <div class="input-box">
+        <h1 class="blurbox"> Check on-road price</h1>
+        <input class="inp" type="text" name="username" placeholder="Type to select name e.g. TATA Tiago">
+        <input class="inp" type="text" name="username" placeholder="Select City">
+        <h4 class="h4">Check on road price in your city</h4>
+      </div>
+    </div>
+
+    <!-- ---------------Compare-cars----------------- -->
+    <h2 class="compCars">Compare Cars</h2>
+
+    <div class="comparisions">
+      <div class="compares">
+        <div class="cars-compare">
+          <img class="CARS" src="compare/seal-exterior-right-front-three-quarter-9.png" alt=""><br>
+          <div class="text">
+            BYD <br>
+            <b>Seal</b> <br>
+            Rs. 40.00 lakhs <br>
+            onwards
+          </div>
+
+
+        </div>
+        <div class="cars-compare">
+          <img class="CARS" src="compare/ioniq-5-exterior-right-front-three-quarter-95.jpeg" alt=""> <br>
+          <div class="text">
+            Hyundai <br>
+            <b>Ioniq 5</b> <br>
+            Rs. 44.04 lakhs <br>
+            onwards
+          </div>
+        </div>
+
+        <a class="compare-now" href="#">Comapare Now</a>
+      </div>
+      <div class="compares">
+        <div class="cars-compare">
+          <img class="CARS" src="compare/fronx-exterior-right-front-three-quarter-109.jpeg" alt=""><br>
+          <div class="text">
+            BYD <br>
+            <b>Seal</b> <br>
+            Rs. 40.00 lakhs <br>
+            onwards
+          </div>
+
+
+        </div>
+        <div class="cars-compare">
+          <img class="CARS" src="compare/scorpio-n-exterior-right-front-three-quarter-75.jpeg" alt=""> <br>
+          <div class="text">
+            Hyundai <br>
+            <b>Ioniq 5</b> <br>
+            Rs. 44.04 lakhs <br>
+            onwards
+          </div>
+        </div>
+
+        <a class="compare-now" href="#">Comapare Now</a>
+      </div>
+      <div class="compares">
+        <div class="cars-compare">
+          <img class="CARS" src="compare/xuv700-exterior-right-front-three-quarter-3.jpeg" alt=""><br>
+          <div class="text">
+            BYD <br>
+            <b>Seal</b> <br>
+            Rs. 40.00 lakhs <br>
+            onwards
+          </div>
+
+
+        </div>
+        <div class="cars-compare">
+          <img class="CARS" src="compare/brezza-exterior-right-front-three-quarter-7.jpeg" alt=""> <br>
+          <div class="text">
+            Hyundai <br>
+            <b>Ioniq 5</b> <br>
+            Rs. 44.04 lakhs <br>
+            onwards
+          </div>
+        </div>
+
+        <a class="compare-now" href="#">Comapare Now</a>
+      </div>
+    </div>
+
+    <!-- -----------compare cars of you choice------------ -->
+    <a class="cm" href="#">Compare cars of your choice </a>
+    <!-- <!- - ---------popular used cars------------ -->
+    <h2 class="popular-usedcars">Popular Used Cars</h2>
+
+    <div class="used-collection">
+      <div class="popularCars">
+        <a href="">
+          <img class="pUsedCars" src="popular used cars/city-exterior-right-front-three-quarter-76.webp" alt="">
+        </a> <br>
+        Used Maruti Suzuki Swift <br>
+        <b>Rs. 90,000.00</b>&nbsp; <sub>Starting Price</sub>
+      </div>
+      <div class="popularCars">
+        <a href="">
+          <img class="pUsedCars" src="popular used cars/swift-exterior-right-front-three-quarter-64.jpeg" alt="">
+        </a> <br>
+        Used Maruti Suzuki Swift <br>
+        <b>Rs. 90,000.00</b>&nbsp; <sub>Starting Price</sub>
+      </div>
+      <div class="popularCars">
+        <a href="">
+          <img class="pUsedCars" src="popular used cars/wagon-r-2022-exterior-right-front-three-quarter-3.webp" alt="">
+        </a> <br>
+        Used Maruti Suzuki Swift <br>
+        <b>Rs. 90,000.00</b>&nbsp; <sub>Starting Price</sub>
+      </div>
+    </div>
+    <!-- --------------view-all-used-cars----------- -->
+    <div class="view">
+      <a class="view-link" href="#">View all Used Cars... </a>
+
+    </div>
+
+    <!-- --------------Latest-Cars---------- -->
+    <h2 class="Cars-update">Latest Cars Updates</h2>
+    <div class="updates-link">
+      <a class="link" href="#">CAR NEWS</a>
+      <a class="link" href="#">EXPERT REVIEWS</a>
+      <a class="link" href="#">VIDEOS</a>
+    </div>
+
+    <div class="latest-cars-update">
+      <div class="latest-cars">
+        <a id="all-text" href="">
+          <img class="upCars" src="update/mg-comet-ev-left-front-three-quarter0.webp" alt="">
+          <div class="sec-div">
+            <h4>Tata Nexon EV Dark arrives at dealership</h4>
+            By Hazi Chakrawale <h5> 09 March 2024</h5>
+            Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Deserunt non necessitatib
+            cum. <br>
+            <a id="bot-link" href="#">Read_more</a>
+            </p>
+          </div>
+        </a>
+      </div>
+      <div class="latest-cars">
+        <a id="all-text" href="">
+          <img class="upCars" src="update/tata-nexon-ev-left-front-three-quarter1.webp" alt="">
+          <div class="sec-div">
+            <h4>Tata Nexon EV Dark arrives at dealership</h4>
+            By Hazi Chakrawale <h5> 09 March 2024</h5>
+            Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Deserunt non necessitatib
+            cum. <br>
+            <a id="bot-link" href="#">Read_more</a>
+            </p>
+          </div>
+        </a>
+      </div>
+      <div class="latest-cars">
+        <a id="all-text" href="">
+          <img class="upCars" src="update/honda-elevate-right-side-view0.webp" alt="">
+          <div class="sec-div">
+            <h4>Tata Nexon EV Dark arrives at dealership</h4>
+            By Hazi Chakrawale <h5> 09 March 2024</h5>
+            Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Deserunt non necessitatib
+            cum. <br>
+            <a id="bot-link" href="#">Read_more</a>
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- ------------------------------ -->
+    <div class="all-view">
+      <a class="view-link" href="#">All News </a>
+
+    </div>
+
+    <!-- ---------------Footer---------- -->
+    <div class="footer">
+      <footer>
+        <div class="companies">
+          <a class="compLogos" href="https://www.carwale.com/">CarWale</a>
+          <a class="compLogos" href="https://www.Cartrade.com/">CarTrade</a>
+          <a class="compLogos" href="https://www.bikewale.com//">Bikewale</a>
+          <a class="compLogos" href="https://www.mobilityoutlook.com/">Bikewale</a>
+          <a class="compLogos" href="https://www.carwale.com/used/absure/">Carwale Atsure</a>
+        </div>
+        <!-- -----------------general-info---------------------        -->
+        <div class="gen-info">
+          <div class="language">
+            Language: <a class="lang" href="#">Hindi</a><a class="lang" href="#">English</a> <br> <br>
+            <a class="lang" href="#">About us</a> &nbsp; &nbsp;&nbsp;&nbsp; <a class="lang" href="#">Terms &
+              condition</a> <br> <br>
+            <a class="lang" href="#">Career</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<a class="lang"
+              href="#">Advertize</a>
+          </div>
+          <div class="vline">
+
+          </div>
+          <div class="language">
+            Download Mobile app <br>
+            <a class="stores" href="https://www.apple.com/in/app-store/"><img class="app-store"
+                src="app stores/app-store.svg" alt=""></a>
+            <a class="stores" href="https://play.google.com/store/games?hl=en_IN&gl=US&pli=1"><img class="app-store"
+                src="app stores/play-store.svg" alt=""></a>
+            <br><br>
+            Connect with us <br> <br>
+            <a class="social-media" href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+            <a class="social-media" href="https://twitter.com/?lang=en"><i class="fa-brands fa-square-twitter"></i></a>
+            <a class="social-media" href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
+            <a class="social-media" href="https://in.linkedin.com/"><i class="fa-brands fa-linkedin"></i></a>
+            <a class="social-media" href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+
+        </div>
+
+        <div class="last-div">
+          <div class="copyright">
+            <i class="fa-solid fa-copyright"></i> 2006-2024. www.carwale.com
+          </div>
+          <div class="line">
+
+          </div>
+          <div class="copyright">
+            Visitor Agreement & Privacy policy
+          </div>
+        </div>
+
+      </footer>
+    </div>
+
+
+</body>
+
+</html>
